@@ -1,0 +1,356 @@
+# estruturas condicionais e laços de repetição
+
+1. Pode Entrar?
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+
+    SE (idade >= 18)
+        EXIBIR "entrada permitida"
+    FIMSE
+FIM
+
+
+2. Saldo Positivo
+INICIO
+    VARIAVEL float: saldo = RECEBA()
+    
+    SE (saldo > 0)
+        EXIBIR "conta possui saldo disponível"
+    FIMSE
+FIM
+
+
+3. Número Par
+INICIO
+    VARIAVEL numero: numero = RECEBA()
+
+    SE (numero % 2 === 0)
+        EXIBIR "número é par"
+    FIMSE
+FIM
+
+
+4. Aprovação Escolar
+INICIO
+    VARIAVEL string: nome = RECEBA()
+    VARIAVEL float: nota = RECEBA()
+
+    EXIBIR "aluno: " . nome
+
+    SE (nota >= 7)
+        EXIBIR "situação: aprovado"
+    SENÃO
+        EXIBIR "situação: reprovado"
+    FIMSE
+FIM
+
+
+5. Caixa Eletrônico
+INICIO
+    VARIAVEL float: saldo = RECEBA()
+    VARIAVEL float: saque = RECEBA()
+
+    SE (saldo >= saque)
+        EXIBIR "saque efetuado"
+        EXIBIR "saldo atual: " . saldo - saque
+    SENÃO
+        EXIBIR "saque não realizado por saldo insuficiente"
+    FIMSE
+FIM
+
+
+6. Login
+INICIO
+    VARIAVEL string: login_usuario = RECEBA()
+    VARIAVEL string: login_senha = RECEBA()
+
+    VARIAVEL string: usuario = "user"
+    VARIAVEL string: senha = "password"
+
+    SE (login_usuario === usuario) E (login_senha === senha)
+        EXIBIR "acesso permitido, bem vindo"
+    SENÃO
+        EXIBIR "acesso negado, login ou senha incorretos"
+    FIMSE
+FIM
+
+
+7. Classificação de Nota
+INICIO
+    VARIAVEL float: nota = RECEBA()
+
+    SE (nota === 10)
+        EXIBIR "nota excelente"
+    SENÃO SE (nota >= 8)
+        EXIBIR "nota boa"
+    SENÃO SE (nota > 6) 
+        EXIBIR "nota regular"
+    SENÃO
+        EXIBIR "nota insuficiente"
+    FIMSE
+FIM
+
+
+8. Classificação por Idade
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+
+    SE (idade <= 10)
+        EXIBIR "criança"
+    SENÃO SE (idade > 10 E idade < 18)
+        EXIBIR "adolescente"
+    SENÃO SE (idade > 18 E idade < 60) 
+        EXIBIR "adulto"
+    SENÃO
+        EXIBIR "idoso"
+    FIMSE
+FIM
+
+
+9. Calculadora de Descontos
+INICIO
+    VARIAVEL float: valor_compra = RECEBA()
+
+    SE (valor_compra > 500)
+        EXIBIR "desconto de 30%"
+    SENÃO SE (valor_compra > 300)
+        EXIBIR "desconto de 20%"
+    SENÃO SE (valor_compra > 100) 
+        EXIBIR "desconto de 10%"
+    SENÃO
+        EXIBIR "desconto de 5%""
+    FIMSE
+FIM
+
+
+10. Contagem Crescente
+INICIO
+    contador <- 1
+
+    PARA contador DE 1 ATÉ 20
+        EXIBIR contador
+    FIMPARA
+FIM
+
+
+11. Tabuada
+INICIO
+    VARIAVEL numero: numero = RECEBA()
+    contador <- 1
+
+    PARA contador DE 1 ATÉ 10
+        EXIBIR numero * contador
+    FIMPARA
+FIM
+
+
+12. Soma dos Primeiros Números
+INICIO
+    VARIAVEL numero: numero = 1
+    contador <- 1
+
+    PARA contador DE 1 ATÉ 100
+        numero <- numero + contador
+    FIMPARA
+
+    EXIBIR "soma dos números de 1 até 100: " . numero
+FIM
+
+
+13. Contagem Regressiva
+INICIO
+    VARIAVEL numero: numero = RECEBA()
+
+    ENQUANTO numero > 0
+        EXIBIR numero
+        numero <- numero - 1        
+    FIMENQUANTO
+FIM
+
+
+14. Somador
+INICIO
+    EXIBIR "insira um número"
+    VARIAVEL numero: numero = RECEBA()
+
+    VARIAVEL numero: soma = 0
+
+    ENQUANTO numero !== 0
+        soma <- soma + numero
+
+        EXIBIR "insira um número"
+        numero <- RECEBA()
+    FIMENQUANTO
+
+    EXIBIR "soma de todos os números: " . soma
+FIM
+
+
+15. Média da Turma
+INICIO
+    EXIBIR "quantas notas serão informadas?"
+    VARIAVEL numero: quantidade_notas = RECEBA()
+    VARIAVEL numero: contador = quantidade_notas
+    VARIAVEL float: média
+    
+    ENQUANTO contador > 0
+        VARIAVEL numero: notas = RECEBA()
+        média <- média + notas
+        contador <- contador - 1
+    FIMENQUANTO
+
+    média <- média / quantidade_notas
+
+    EXIBIR "média das notas: " . média
+FIM
+
+
+16. Sistema de Caixa
+INICIO
+    VARIAVEL numero: quantidade_produtos = RECEBA()
+    VARIAVEL float: valor_final
+
+    ENQUANTO quantidade_produtos > 0
+        EXIBIR "nome do produto:"
+        VARIAVEL string: produto = RECEBA()
+        EXIBIR produto
+        
+        EXIBIR "preço do produto:"
+        VARIAVEL float: preco = RECEBA()
+        EXIBIR preco
+
+        valor_final <- valor_final + preco
+        quantidade_produtos <- quantidade_produtos - 1
+    FIMENQUANTO
+
+    SE (valor_final > 300)
+        EXIBIR "tem desconto disponível"
+        EXIBIR "valor final: " . valor_final * (desconto)
+    SENÃO
+        EXIBIR "valor final: " . valor_final
+    FIMSE
+FIM
+
+
+17. Sistema de Login
+INICIO
+    VARIAVEL numero: tentativas = 3
+    VARIAVEL string: login_senha = "senha"
+    VARIAVEL string: senha
+
+    ENQUANTO tentativas > 0 E (senha !== login_senha)
+        EXIBIR "indique uma senha:"
+        senha <- RECEBA()
+        tentativas <- tentativas -1
+    FIMENQUANTO
+
+    SE (senha === login_senha)
+        EXIBIR "acesso perimitido, bem vindo usuário"
+    SENÃO
+        EXIBIR "acesso negado, login bloqueado temporariamente"
+    FIMSE
+FIM
+
+
+18. Sistema de Cadastro de Alunos
+INICIO
+    VARIAVEL numero: quantidade_alunos = RECEBA()
+    VARIAVEL numero: aprovados
+    VARIAVEL numero: reprovados
+    VARIAVEL float: média = 0
+    VARIAVEL float: maior_nota = 0
+    VARIAVEL float: menor_nota = 10
+
+    VARIAVEL numero: contador = quantidade_alunos
+
+    ENQUANTO contador > 0
+        VARIAVEL string: nome = RECEBA()
+        VARIAVEL float: nota = RECEBA()
+
+        EXIBIR "situação do aluno: " . nome
+        SE (nota >= 7)
+            EXIBIR "aluno foi aprovado"
+            aprovados <- aprovados + 1
+        SENÃO
+            EXIBIR "aluno foi reprovado"
+            reprovados <- reprovados + 1
+        FIMSE
+
+        SE (nota > maior_nota)
+            maior_nota <- nota
+        SENÃO SE (nota < menor_nota)
+            menor_nota <- nota
+        FIMSE
+        
+        média = media + nota
+        contador <- contador - 1
+    FIMENQUANTO
+
+    EXIBIR "quantidade de aprovados: " . aprovados
+    EXIBIR "quantidade de reprovados: " . reprovados
+    EXIBIR "média geral da turma: " . média / quantidade_alunos
+    EXIBIR "maior nota: " . maior_nota
+    EXIBIR "menor nota: " . menor_nota
+FIM
+
+
+19. Sistema de Menu
+INICIO
+    VARIAVEL numero: opcao = 0 // valor inicial
+    
+    ENQUANTO opcao != 5 // loop principal
+        EXIBIR "========== MENU =========="
+        EXIBIR "1 - Somar dois números"
+        EXIBIR "2 - Calcular média"
+        EXIBIR "3 - Verificar se um número é par"
+        EXIBIR "4 - Fazer contagem de 1 até N"
+        EXIBIR "5 - Sair"
+        EXIBIR "=========================="
+        EXIBIR "Escolha uma opção: "
+        opcao = RECEBEA() // recebe input do usuário
+        
+        SE (opcao == 1) // Somar dois números
+            VARIAVEL float: num1 = RECEBEA()
+            VARIAVEL float: num2 = RECEBEA()
+            EXIBIR "Resultado da soma: " . (num1 + num2)
+        
+        SENAO SE (opcao == 2) // Calcular média
+            VARIAVEL numero: qtd = RECEBEA()
+            VARIAVEL float: soma = 0
+            VARIAVEL numero: contador = qtd
+            
+            ENQUANTO contador > 0
+                VARIAVEL float: valor = RECEBEA()
+                soma = soma + valor
+                contador = contador - 1
+            FIMENQUANTO
+            
+            EXIBIR "Média: " . (soma / qtd)
+        
+        SENAO SE (opcao == 3) // Verificar se é par
+            VARIAVEL numero: numero = RECEBEA()
+            SE (numero % 2 == 0)
+                EXIBIR "O número " . numero . " é par"
+            SENAO
+                EXIBIR "O número " . numero . " é ímpar"
+            FIMSE
+        
+        SENAO SE (opcao == 4) // Contagem de 1 até N
+            VARIAVEL numero: N = RECEBEA()
+            VARIAVEL numero: contador = 1
+            
+            ENQUANTO contador <= N
+                EXIBIR contador
+                contador = contador + 1
+            FIMENQUANTO
+        
+        SENAO SE (opcao == 5) // Sair
+            EXIBIR "Saindo do programa..."
+        
+        SENAO // opção inválida
+            EXIBIR "Opção inválida! Tente novamente."
+        FIMSE
+        
+        EXIBIR "" // linha em branco para organizar
+    FIMENQUANTO
+FIM

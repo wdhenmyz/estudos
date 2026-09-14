@@ -1,0 +1,241 @@
+# aritméticos, relacionais e lógicos
+
+1, Troco da Compra
+INICIO
+    VARIAVEL string: nome_produto = RECEBA()
+    VARIAVEL float: preco_produto = RECEBA()
+    VARIAVEL float: valor_pago = RECEBA()
+
+    VARIAVEL float: troco = valor_pago - preco_produto
+
+    EXIBIR "--------boleto--------"
+    EXIBIR "produto: " , nome_produto
+    EXIBIR "preço: " , preco_produto
+    EXIBIR "valor pago: " , valor_pago
+    EXIBIR "troco: " , troco
+FIM
+
+
+2, Área de um Retângulo
+INICIO
+    VARIAVEL float: base = RECEBA()
+    VARIAVEL float: altura = RECEBA()
+    VARIAVEL float: area = base * altura
+
+    EXIBIR "área total: " , area
+FIM
+
+
+3, Conversor de Horas
+INICIO
+    VARIAVEL float: horas = RECEBA()
+
+    VARIAVEL float: minutos = horas * 60
+    VARIAVEL float: segundos = minutos * 60
+
+    EXIBIR horas , " são equivalentes á: " , minutos , " minutos ou " , segundos , " segundos"
+FIM
+
+
+4, Divisão Inteira
+INICIO
+    VARIAVEL numero: dividendo = RECEBA(), divisor = RECEBA()
+
+    VARIAVEL numero: quociente = dividendo / divisor
+    VARIAVEL numero: resto = dividendo % divisor
+
+    EXIBIR "o quociente e o resto da divisão são respectivamente"
+    EXIBIR quociente , "e" , resto
+FIM
+
+
+5, Consumo de Combustível
+INICIO
+    VARIAVEL numero: distancia = RECEBA()
+    VARIAVEL float: litros_gastos = RECEBA()
+
+    VARIAVEL float: consumo_medio = litros_gastos / distancia
+
+    EXIBIR "o consumo médio deste automóvel é de: " , consumo_medio
+FIM
+
+
+6, Maior de Idade
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+    VARIAVEL logico: ehadulto = (idade >= 18)
+
+    SE ehadulto === verdadeiro
+        EXIBIR "é um maior de idade"
+    SENÃO
+        EXIBIR "é um menor de idade"
+    FIMSE
+FIM
+
+
+7, Aprovação Escolar
+INICIO
+    VARIAVEL float: nota = RECEBA()
+    VARIAVEL logico: se_passou = (nota >= 7)
+
+    SE se_passou === verdadeiro
+        EXIBIR "o aluno passou"
+    SENÃO
+        EXIBIR "o aluno ficou em recuperação"
+    FIMSE
+FIM
+
+
+8, Estoque Disponível
+INICIO
+    VARIAVEL float: estoque = RECEBA()
+    VARIAVEL logico: tem_produto = (estoque >= 1)
+
+    SE tem_produto === verdadeiro
+        EXIBIR "ainda tem pelo menos um produto disponível"
+    SENÃO
+        EXIBIR "o estoque está atualmente vazio"
+    FIMSE
+FIM
+
+
+9, Comparador de Dois Números
+INICIO
+    VARIAVEL numero: numero1 = RECEBA()
+    VARIAVEL numero: numero2 = RECEBA()
+
+    VARIAVEL logico: ehigual = (numero1 === numero2)
+    VARIAVEL logico: ehdiferente = (numero1 !== numero2)
+    VARIAVEL logico: ehmaior = (numero1 > numero2)
+    VARIAVEL logico: ehmenor = (numero1 < numero2)
+
+    EXIBIR "os números são iguais?" , ehigual
+    EXIBIR "os números são diferentes?" , ehdiferente
+    EXIBIR "o primeiro número é maior?" , ehmaior
+    EXIBIR "o primeiro número é menor?" , ehmenor
+FIM
+
+
+10, Verificador de Faixa Etária
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+
+    VARIAVEL logico: condicao = (idade > 13) e (idade < 17)
+
+    SE condicao === verdadeiro
+        EXIBIR "idade está ente 13 e 17 anos"
+    SENAO
+        EXIBIR "idade não está ente 13 e 17 anos"
+    FIMSE
+FIM
+
+
+11, Acesso ao Evento
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+    VARIAVEL logico: ehautorizado = falso
+
+    SE (idade >= 18) E ehautorizado
+        EXIBIR "entrada permitida"
+    SENAO
+        EXIBIR "entrada negada"
+    FIMSE
+FIM
+
+
+12, Login Administrativo
+INICIO
+    VARIAVEL logico: ehadministrador = RECEBA()
+    VARIAVEL logico: tem_senha_esp = RECEBA()
+
+    SE ehadministrador OU tem_senha_esp
+        EXIBIR "acesso permitido"
+    SENAO
+        EXIBIR "acesso negado"
+    FIMSE
+FIM
+
+
+13, Empréstimo Bancário
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+    VARIAVEL float: salario = RECEBA()
+
+    SE (idade >= 18) E (salario >= 2000,00)
+        EXIBIR "emprestimo bancário permitido"
+    SENAO
+        EXIBIR "emprestimo bancário negado"
+    FIMSE
+FIM
+
+
+14, Sistema de Biblioteca
+INICIO
+    VARIAVEL numero: idade = RECEBA()
+    VARIAVEL logico: ehcadastrado = RECEBA()
+
+    SE ehcadastrado E (idade >= 12)
+        EXIBIR "empréstimo permitido"
+    SENAO
+        EXIBIR "empréstimo negado"
+    FIMSE
+FIM
+
+
+15, Promoção da Loja
+INICIO
+    VARIAVEL float: valor_compra = RECEBA()
+    VARIAVEL logico: tem_cupon = RECEBA()
+
+    SE (valor_compra >= 200) OU tem_cupon
+        EXIBIR "recebeu desconto de 10%"
+        EXIBIR "valor da compra: " , valor_compra * (100 - 10)
+    SENAO
+        EXIBIR "valor da compra: " , valor_compra
+    FIMSE
+FIM
+
+16, Sistema de Inscrição para Campeonato
+INICIO
+    VARIAVEL string: nome_competidor = RECEBA()
+    VARIAVEL numero: idade = RECEBA()
+    VARIAVEL float: peso = RECEBA()
+    VARIAVEL logico: tem_autorizacao = RECEBA()
+    VARIAVEL logico: pagou_inscricao = RECEBA()
+    VARIAVEL string: inscricao = "recusada"
+
+    SE (idade >= 18 E pagou_inscricao) OU (idade >= 16 E tem_autorizacao E pagou_inscricao)
+        inscricao <- "aprovado"
+    FIMSE
+
+    EXIBIR "------ competidor -------"
+    EXIBIR "nome do competidor: " , nome_competidor
+    EXIBIR "idade do competidor: " , idade
+    EXIBIR "peso: " , peso
+    EXIBIR "situação da inscrição: " , inscricao
+FIM
+
+17, Sistema de Loja Inteligente
+INICIO
+    VARIAVEL string: nome_cliente = RECEBA()
+    VARIAVEL numero: quantidade_produto = RECEBA()
+    VARIAVEL float: preco_unitario = RECEBA()
+    VARIAVEL float: desconto = RECEBA()
+    VARIAVEL logico: possui_cartao_fidelidade = RECEBA()
+
+    VARIAVEL float: subtotal = quantidade_produto * preco_unitario
+    VARIAVEL float: valor_desconto = subtotal * desconto
+    VARIAVEL float: valor_final = subtotal - valor_desconto
+    VARIAVEL logico: ehpar = (quantidade_produto % 2 === 0)
+
+    VARIAVEL string: permite_promocao = "não"
+
+    SE (valor_final >= 300) OU (possui_cartao_fidelidade)
+        permite_promocao <- "sim"
+
+    EXIBIR "nome do cliete:", nome_cliente
+    EXIBIR "subtotal da compra: " , subtotal
+    EXIBIR "valor do desconto: " , valor_desconto
+    EXIBIR "valor final da compra: " , valor_final
+    EXIBIR "pode participar da promoção: " , permite_promocao
+FIM

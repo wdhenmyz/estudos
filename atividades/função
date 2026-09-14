@@ -1,0 +1,568 @@
+# Procedimentos e funções
+
+
+1. Saudação
+INICIO
+    procedimento mostrarBoasVindas()
+    INICIO
+        EXIBIR "boas vindas!"
+    FIM
+
+    procedimento main()
+    INICIO
+        mostrarBoasVindas()
+    FIM
+FIM
+
+=================================
+2. Linha Decorativa
+INICIO
+    procedimento linha()
+    INICIO
+        EXIBIR "========================="
+    FIM
+
+    procedimento main()
+    INICIO
+        linha()
+        linha()
+        linha()
+    FIM
+FIM
+
+==================================
+3. Exibir Dados
+INICIO
+    procedimento exibir dados()
+    INICIO
+        VARIAVEL string: nome = RECEBA()
+        VARIAVEL numero: idade = RECEBA()
+
+        EXIBIR nome
+        EXIBIR idade
+    FIM
+
+    procedimento main()
+    INICIO
+        
+    FIM
+FIM
+
+=================================
+4. Soma
+INICIO
+    função soma()
+    INICIO
+        VARIAVEL numero: num1 = RECEBA()
+        VARIAVEL numero: num2 = RECEBA()
+
+        RETORNE num1 + num2
+    FIM
+
+    procedimento main()
+    INICIO
+        EXIBIR soma()
+    FIM
+FIM
+
+=================================
+5. Maior Número
+INICIO
+    função maior()
+    INICIO
+        VARIAVEL numero: num1 = RECEBA()
+        VARIAVEL numero: num2 = RECEBA()
+
+        SE num1 > num2
+            RETORNE num1
+        SENÃO SE num2 > num1
+            RETORNE num2
+        FIMSE
+    FIM
+
+    procedimento main()
+    INICIO
+        EXIBIR maior()
+    FIM
+FIM
+
+=================================
+6. Média
+INICIO
+    função média()
+    INICIO
+        VARIAVEL float: nota1 = RECEBA()
+        VARIAVEL flaot: nota2 = RECEBA()
+        VARIAVEL flaot: nota3 = RECEBA()
+
+        RETORNE (nota1 + nota2 + nota3) / 3
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL float: média = média()
+
+        SE média >= 7
+            EXIBIR "aluno aprovado"
+        SENÃO
+            EXIBIR "aluno em recuperação"
+        FIMSE
+    FIM
+FIM
+
+=================================
+7. Calculadora
+INICIO
+    função somar(a, b)
+    INICIO
+        RETORNE a + b
+    FIM
+
+    função subtrair(a, b)
+    INICIO
+        RETORNE a - b
+    FIM
+
+    função multiplicar(a, b)
+    INICIO
+        RETORNE a * b
+    FIM
+
+    função dividir(a, b)
+    INICIO
+        RETORNE a / b
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL numero: num1 = RECEBA()
+        VARIAVEL numero: num2 = RECEBA()
+
+        EXIBIR somar(num1, num2)
+        EXIBIR subtrair(num1, num2)
+        EXIBIR multiplicar(a, b)
+        EXIBIR RETORNE a / b
+    FIM
+FIM
+
+=================================
+8. Conversor
+INICIO
+    função metrosParaCentimetros(a)
+    INICIO
+        RETORNE a * 100
+    FIM
+
+    função quilometrosParaMetros(a)
+    INICIO
+        RETORNE a * 1000
+    FIM
+
+    função horasParaMinutos(a)
+    INICIO
+        RETORNE a * 60
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL numero: valor = RECEBA()
+
+        EXIBIR "este valor equivale há"
+        EXIBIR "em metros => " . metrosParaCentimetros(valor) . " centímetros"
+        EXIBIR "em quilometros => " . quilometrosParaMetros(valor) . " metros"
+        EXIBIR "em horas => "horasParaMinutos(valor) . " minutos"
+    FIM
+FIM
+
+=================================
+9. Loja
+INICIO
+    função subtotal(valores)
+    INICIO
+        VARIAVEL float: subtotal
+
+        PARA CADA valor DE valores
+            subtotal <- subtotal + valor
+        FIMPARA
+
+        RETORNE subtotal
+    FIM
+
+    função calcularDesconto(a)
+    INICIO
+        RETORNE (100 - a) * 0.01
+    FIM
+
+    função valorfinal(subtotal, desconto)
+    INICIO
+        SE desconto > 0
+            RETORNE subtotal * desconto
+        FIMSE
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL float: subtotal = subtotal(valores)
+        VARIAVEL float: desconto = calcularDesconto(valor)
+
+        EXIBIR "subtotal: " . subtotal
+        EXIBIR "desconto da compra: " . desconto
+        EXIBIR "valor final: " . valorfinal(subtotal, desconto)
+    FIM
+FIM
+
+=================================
+10. Boletim
+INICIO
+    // Procedimento para ler as notas
+    procedimento lerNotas(VARIAVEL float: nota1, nota2, nota3)
+    INICIO
+        EXIBIR "Digite a primeira nota: "
+        nota1 <- RECEBEA()
+        EXIBIR "Digite a segunda nota: "
+        nota2 <- RECEBEA()
+        EXIBIR "Digite a terceira nota: "
+        nota3 <- RECEBEA()
+    FIM
+
+    // Função para calcular a média
+    função calcularMedia(nota1, nota2, nota3)
+    INICIO
+        RETORNE (nota1 + nota2 + nota3) / 3
+    FIM
+
+    // Procedimento para mostrar o resultado
+    procedimento mostrarResultado(media)
+    INICIO
+        EXIBIR "Média do aluno: " . media
+        SE media >= 7
+            EXIBIR "APROVADO"
+        SENAO SE media >= 5
+            EXIBIR "RECUPERAÇÃO"
+        SENAO
+            EXIBIR "REPROVADO"
+        FIMSE
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL float: n1, n2, n3
+        VARIAVEL float: media
+        
+        lerNotas(n1, n2, n3)
+        media = calcularMedia(n1, n2, n3)
+        mostrarResultado(media)
+    FIM
+FIM
+
+=================================
+11. Cadastro de Produto
+INICIO
+    // Procedimento de cadastro
+    procedimento cadastrarProduto(VARIAVEL string: nome, VARIAVEL numero: quantidade, VARIAVEL float: preco)
+    INICIO
+        EXIBIR "Nome do produto: "
+        nome <- RECEBEA()
+        EXIBIR "Quantidade: "
+        quantidade <- RECEBEA()
+        EXIBIR "Preço unitário: "
+        preco <- RECEBEA()
+    FIM
+
+    // Função que calcula o valor total
+    função calcularTotal(quantidade, preco)
+    INICIO
+        RETORNE quantidade * preco
+    FIM
+
+    // Procedimento que imprime os dados
+    procedimento imprimirDados(nome, quantidade, preco, total)
+    INICIO
+        EXIBIR "========== NOTA FISCAL =========="
+        EXIBIR "Produto: " . nome
+        EXIBIR "Quantidade: " . quantidade
+        EXIBIR "Preço unitário: R$ " . preco
+        EXIBIR "Total: R$ " . total
+        EXIBIR "================================="
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL string: nome
+        VARIAVEL numero: quantidade
+        VARIAVEL float: preco
+        VARIAVEL float: total
+        
+        cadastrarProduto(nome, quantidade, preco)
+        total = calcularTotal(quantidade, preco)
+        imprimirDados(nome, quantidade, preco, total)
+    FIM
+FIM
+
+=================================
+12. Caixa Eletrônico
+INICIO
+    VARIAVEL float: saldo = 1000.00 // saldo inicial
+    
+    função verificarSaldo()
+    INICIO
+        RETORNE saldo
+    FIM
+
+    função sacar(valor)
+    INICIO
+        SE valor > saldo
+            EXIBIR "Saldo insuficiente!"
+            RETORNE 0
+        SENAO
+            saldo <- saldo - valor
+            RETORNE valor
+        FIMSE
+    FIM
+
+    função depositar(valor)
+    INICIO
+        saldo <- saldo + valor
+        RETORNE saldo
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL numero: opcao = 0
+        VARIAVEL float: valor
+        
+        ENQUANTO opcao != 4
+            EXIBIR "===== CAIXA ELETRÔNICO ====="
+            EXIBIR "1 - Verificar saldo"
+            EXIBIR "2 - Sacar"
+            EXIBIR "3 - Depositar"
+            EXIBIR "4 - Sair"
+            EXIBIR "==========================="
+            EXIBIR "Opção: "
+            opcao <- RECEBEA()
+            
+            SE opcao == 1
+                EXIBIR "Saldo atual: R$ " . verificarSaldo()
+            SENAO SE opcao == 2
+                EXIBIR "Valor para sacar: "
+                valor <- RECEBEA()
+                sacar(valor)
+                EXIBIR "Novo saldo: R$ " . verificarSaldo()
+            SENAO SE opcao == 3
+                EXIBIR "Valor para depositar: "
+                valor <- RECEBEA()
+                depositar(valor)
+                EXIBIR "Novo saldo: R$ " . verificarSaldo()
+            SENAO SE opcao == 4
+                EXIBIR "Saindo..."
+            SENAO
+                EXIBIR "Opção inválida!"
+            FIMSE
+        FIMENQUANTO
+    FIM
+FIM
+
+=================================
+13. Sistema Escolar
+INICIO
+    // Função para calcular média
+    função calcularMedia(nota1, nota2, nota3)
+    INICIO
+        RETORNE (nota1 + nota2 + nota3) / 3
+    FIM
+
+    // Função para verificar aprovação
+    função verificarAprovacao(media)
+    INICIO
+        SE media >= 7
+            RETORNE "APROVADO"
+        SENAO SE media >= 5
+            RETORNE "RECUPERAÇÃO"
+        SENAO
+            RETORNE "REPROVADO"
+        FIMSE
+    FIM
+
+    // Função para classificar desempenho
+    função classificarDesempenho(media)
+    INICIO
+        SE media >= 9
+            RETORNE "EXCELENTE"
+        SENAO SE media >= 7
+            RETORNE "BOM"
+        SENAO SE media >= 5
+            RETORNE "REGULAR"
+        SENAO
+            RETORNE "INSATISFATÓRIO"
+        FIMSE
+    FIM
+
+    // Procedimento para mostrar relatório
+    procedimento mostrarRelatorio(nome, media, situacao, desempenho)
+    INICIO
+        EXIBIR "========== RELATÓRIO =========="
+        EXIBIR "Aluno: " . nome
+        EXIBIR "Média: " . media
+        EXIBIR "Situação: " . situacao
+        EXIBIR "Desempenho: " . desempenho
+        EXIBIR "================================"
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL string: nome
+        VARIAVEL float: n1, n2, n3
+        VARIAVEL float: media
+        VARIAVEL string: situacao
+        VARIAVEL string: desempenho
+        
+        EXIBIR "Nome do aluno: "
+        nome <- RECEBEA()
+        EXIBIR "Nota 1: "
+        n1 <- RECEBEA()
+        EXIBIR "Nota 2: "
+        n2 <- RECEBEA()
+        EXIBIR "Nota 3: "
+        n3 <- RECEBEA()
+        
+        media = calcularMedia(n1, n2, n3)
+        situacao = verificarAprovacao(media)
+        desempenho = classificarDesempenho(media)
+        mostrarRelatorio(nome, media, situacao, desempenho)
+    FIM
+FIM
+
+=================================
+14. Sistema de Biblioteca
+INICIO
+    // Função para verificar idade
+    função verificarIdade(idade)
+    INICIO
+        SE idade >= 18
+            RETORNE "Maior de idade"
+        SENAO
+            RETORNE "Menor de idade"
+        FIMSE
+    FIM
+
+    // Função para verificar cadastro
+    função verificarCadastro(cadastrado)
+    INICIO
+        SE cadastrado == "sim"
+            RETORNE "Cadastro ativo"
+        SENAO
+            RETORNE "Sem cadastro"
+        FIMSE
+    FIM
+
+    // Função para verificar empréstimo
+    função verificarEmprestimo(ativo, idade)
+    INICIO
+        SE ativo == "sim" E idade >= 18
+            RETORNE "Permitido"
+        SENAO
+            RETORNE "Negado"
+        FIMSE
+    FIM
+
+    // Procedimento para exibir resultado final
+    procedimento exibirResultado(nome, Idade, Cadastro, Emprestimo)
+    INICIO
+        EXIBIR "========== BIBLIOTECA =========="
+        EXIBIR "Usuário: " . nome
+        EXIBIR "Status idade: " . Idade
+        EXIBIR "Status cadastro: " . Cadastro
+        EXIBIR "Status empréstimo: " . Emprestimo
+        EXIBIR "================================="
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL string: nome
+        VARIAVEL numero: idade
+        VARIAVEL string: cadastrado
+        VARIAVEL string: statusIdade
+        VARIAVEL string: statusCadastro
+        VARIAVEL string: statusEmprestimo
+        
+        EXIBIR "Nome do usuário: "
+        nome <- RECEBEA()
+        EXIBIR "Idade: "
+        idade <- RECEBEA()
+        EXIBIR "Está cadastrado? (sim/nao): "
+        cadastrado <- RECEBEA()
+        
+        statusIdade = verificarIdade(idade)
+        statusCadastro = verificarCadastro(cadastrado)
+        statusEmprestimo = verificarEmprestimo(cadastrado, idade)
+        exibirResultado(nome, statusIdade, statusCadastro, statusEmprestimo)
+    FIM
+FIM
+
+=================================
+15. Sistema de Compras
+INICIO
+    // Função para calcular subtotal
+    função calcularSubtotal(preco, quantidade)
+    INICIO
+        RETORNE preco * quantidade
+    FIM
+
+    // Função para calcular imposto
+    função calcularImposto(subtotal, aliquota)
+    INICIO
+        RETORNE subtotal * (aliquota / 100)
+    FIM
+
+    // Função para calcular desconto
+    função calcularDesconto(subtotal, percentual)
+    INICIO
+        RETORNE subtotal * (percentual / 100)
+    FIM
+
+    // Função para calcular valor final
+    função calcularValorFinal(subtotal, imposto, desconto)
+    INICIO
+        RETORNE subtotal + imposto - desconto
+    FIM
+
+    // Procedimento para mostrar nota fiscal
+    procedimento mostrarNotaFiscal(produto, quantidade, preco, subtotal, imposto, desconto, total)
+    INICIO
+        EXIBIR "========== NOTA FISCAL =========="
+        EXIBIR "Produto: " . produto
+        EXIBIR "Quantidade: " . quantidade
+        EXIBIR "Preço unitário: R$ " . preco
+        EXIBIR "---------------------------------"
+        EXIBIR "Subtotal: R$ " . subtotal
+        EXIBIR "Imposto (10%): R$ " . imposto
+        EXIBIR "Desconto (5%): R$ " . desconto
+        EXIBIR "---------------------------------"
+        EXIBIR "VALOR FINAL: R$ " . total
+        EXIBIR "================================="
+    FIM
+
+    procedimento main()
+    INICIO
+        VARIAVEL string: produto
+        VARIAVEL numero: quantidade
+        VARIAVEL float: preco
+        VARIAVEL float: subtotal
+        VARIAVEL float: imposto
+        VARIAVEL float: desconto
+        VARIAVEL float: total
+        
+        EXIBIR "Nome do produto: "
+        produto <- RECEBEA()
+        EXIBIR "Quantidade: "
+        quantidade <- RECEBEA()
+        EXIBIR "Preço unitário: "
+        preco <- RECEBEA()
+        
+        subtotal = calcularSubtotal(preco, quantidade)
+        imposto = calcularImposto(subtotal, 10) // 10% de imposto
+        desconto = calcularDesconto(subtotal, 5) // 5% de desconto
+        total = calcularValorFinal(subtotal, imposto, desconto)
+        mostrarNotaFiscal(produto, quantidade, preco, subtotal, imposto, desconto, total)
+    FIM
+FIM

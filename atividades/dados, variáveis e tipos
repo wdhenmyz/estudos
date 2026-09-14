@@ -1,0 +1,240 @@
+# dados, variáveis e tipos
+
+1,
+INICIO
+    RECEBA nome
+    RECEBA idade
+
+    EXIBIR "Olá," , nome + "!" , "Você tem" , idade , "anos"
+FIM
+
+
+2,
+INICIO
+    RECEBA produto
+    RECEBA preco
+    RECEBA estoque
+
+    EXIBIR "produto: ", produto
+    EXIBIR "preço: ", preco
+    EXIBIR "quantidade em estoque: ", estoque
+FIM
+
+
+3,
+INICIO
+    RECEBA nome
+    RECEBA matricula
+    RECEBA turma
+    RECEBA altura
+
+    EXIBIR "nome do aluno:" , nome
+    EXIBIR "matrícula:" , matricula
+    EXIBIR "turma:" , turma
+    EXIBIR "altura:" , altura
+FIM
+
+
+4,
+INICIO
+    VARIÁVEL numero: soma
+
+    RECEBA numero1
+    RECEBA numero2
+
+    soma <- numero1 + numero2
+
+    EXIBIR soma
+FIM
+
+
+5,
+INICIO
+    VARIÁVEL numero: media
+
+    RECEBA nota1
+    RECEBA nota2
+
+    media <- (nota1 + nota2) / 2
+
+    EXIBIR media
+FIM
+
+
+6,
+INICIO
+    VARIÁVEL numero: novo_salario
+
+    RECEBA funcionario
+    RECEBA salario
+    RECEBA aumento
+
+    novo_salario <- salario + (salario * aumento)
+
+    EXIBIR funcionario
+    EXIBIR "o novo salário: " , novo_salario
+FIM
+
+
+7,
+INICIO
+    VARIAVEL numero: valor_total
+
+    RECEBA nome_produto
+    RECEBA preco_unidade
+    RECEBA quantidade
+
+    valor_total <- preco_unidade * quantidade
+
+    EXIBIR nome_produto
+    EXIBIR "valor da compra:" , valor_total
+FIM
+
+
+8,
+INICIO
+    VARIÁVEL numero: estoque
+
+    RECEBA produto
+    RECEBA vendidas
+
+    estoque <- estoque - vendida
+
+    EXIBIR "nome do produto :" , produto
+    EXIBIR "quantidade atual no estoque: " , estoque
+FIM
+
+
+9,
+INICIO
+    VARIÁVEL float: saldo_inicial
+    VARIÁVEL float: saldo_final
+
+    RECEBA nome
+    RECEBA valor_depositado
+    RECEBA valor_sacado
+
+    saldo_final <- saldo_inicial + valor_depositado - valor_sacado
+
+    EXIBIR "cliente de nome:" , nome
+    EXIBIR "saldo atual:" , saldo_final
+FIM
+
+
+10,
+INICIO
+    VARIAVEL numero: tempo_total
+
+    RECEBA nome_corredor
+    RECEBA tempo_1_volta
+    RECEBA tempo_2_volta
+    RECEBA tempo_3_volta
+
+    tempo_total <- tempo_1_volta + tempo_2_volta + tempo_3_volta
+
+    EXIBIR "corredor de nome: " , nome_corredor
+    EXIBIR "tempo total: " , tempo_total
+FIM
+
+
+11,
+INICIO
+    RECEBA string: nome
+    RECEBA numero: idade
+    RECEBA float: altura
+    RECEBA sexo: char
+
+    EXIBIR "pessoa de nome:" , nome
+    EXIBIR "idade:" , idade
+    EXIBIR "altura:" , altura
+    EXIBIR "sexo:" , sexo
+FIM
+
+
+12,
+INICIO
+    VARIAVEL bool: ligada
+
+    EXIBIR "a lâmpada está ligada?"
+    EXIBIR ligada
+FIM
+
+
+13,
+INICIO
+    RECEBA string: modelo
+    RECEBA numero: ano
+    RECEBA float: preco
+    RECEBA char: categoria
+
+    EXIBIR "carro cadastrado, segue as informações"
+    EXIBIR "======================================"
+    EXIBIR "modelo: " , modelo
+    EXIBIR "ano: " , ano
+    EXIBIR "preço: " ,preco
+    EXIBIR "categoria: " , categoria
+    EXIBIR "======================================"
+FIM
+
+
+14,
+INICIO
+    VARIAVEL float: media
+    VARIAVEL bool: aprovado = falso
+
+    RECEBA string: aluno
+    RECEBA float: nota1
+    RECEBA float: nota2
+
+    media <- (nota1 + nota2) / 2
+
+    aprovado <- (media >= 7,0)
+
+    EXIBIR "aluno de nome: " , aluno
+    EXIBIR "com média: " , media
+    EXIBIR "está aprovado? " , aprovado
+FIM
+
+
+15,
+INICIO
+    RECEBA string: nome
+    RECEBA numero: idade
+    RECEBA float: salario
+    RECEBA string: cargo
+    RECEBA char: sexo
+
+    salario <- salario * 1,1
+
+    EXIBIR "funcionário:" , nome
+    EXIBIR "idade:" , idade
+    EXIBIR "salário:" , salario
+    EXIBIR "cargo:" , cargo
+    EXIBIR "sexo:", sexo
+FIM
+
+
+16,
+INICIO
+    VARIAVEL float: valor_diaria = 15
+    VARIAVEL float: total_aluguel
+
+    RECEBA string: nome
+    RECEBA numero: idade
+    RECEBA float: altura
+    RECEBA char: categoria_bicicleta
+    RECEBA numero: dias_alugados
+
+    total_aluguel <- dias_alugados * valor_diaria
+
+    EXIBIR "cliente cadastrado"
+    EXIBIR "==============================================="
+    EXIBIR "nome do cliente:", nome
+    EXIBIR "idade do cliente:", idade
+    EXIBIR "altura do cliente:", altura
+    EXIBIR "categoria da bicicleta:", categoria_bicicleta
+    EXIBIR "valor da diária:", valor_diaria
+    EXIBIR "dias alugados:", dias_alugados
+    EXIBIR "valor total do aluguel:", total_aluguel
+    EXIBIR "==============================================="
+FIM

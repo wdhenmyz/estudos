@@ -1,0 +1,12 @@
+modelo = input("modelo do carro: ")
+ano = input("ano do carro: ")
+preco = input("preço do carro: ")
+categoria = input("categoria do carro: ")
+
+print("carro cadastrado, segue as informações")
+print("======================================")
+print("modelo:", modelo)
+print("ano:", ano)
+print("preço:", preco)
+print("categoria:", categoria)
+print("======================================")

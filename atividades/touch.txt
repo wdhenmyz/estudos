@@ -1,0 +1,2 @@
+touch {ola,voltas,salario,aluno,compra,saldo,carro,pessoa,situacao,produto,media,aluguelBicicleta,lampada,salario2,estoque,soma}.dr
+touch {area, troco}.dr

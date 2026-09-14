@@ -1,0 +1,665 @@
+atividades extra funções
+
+*********************************
+Desafio Bônus ⭐
+
+Agenda Telefônica
+INICIO
+    // Estrutura para armazenar contatos (simulando um vetor)
+    VARIAVEL string: nomes[100]
+    VARIAVEL string: telefones[100]
+    VARIAVEL numero: totalContatos = 0
+    
+    // Procedimento para cadastrar contato
+    procedimento cadastrarContato()
+    INICIO
+        VARIAVEL string: nome
+        VARIAVEL string: telefone
+        
+        EXIBIR "Nome do contato: "
+        nome <- RECEBEA()
+        EXIBIR "Telefone: "
+        telefone <- RECEBEA()
+        
+        nomes[totalContatos] <- nome
+        telefones[totalContatos] <- telefone
+        totalContatos <- totalContatos + 1
+        
+        EXIBIR "Contato cadastrado com sucesso!"
+    FIM
+    
+    // Procedimento para procurar contato
+    procedimento procurarContato()
+    INICIO
+        VARIAVEL string: busca
+        VARIAVEL numero: encontrado = 0
+        VARIAVEL numero: i
+        
+        EXIBIR "Digite o nome para buscar: "
+        busca <- RECEBEA()
+        
+        PARA i = 0 ATE totalContatos - 1
+            SE nomes[i] == busca
+                EXIBIR "Contato encontrado:"
+                EXIBIR "Nome: " . nomes[i]
+                EXIBIR "Telefone: " . telefones[i]
+                encontrado = 1
+            FIMSE
+        FIMPARA
+        
+        SE encontrado == 0
+            EXIBIR "Contato não encontrado!"
+        FIMSE
+    FIM
+    
+    // Procedimento para listar todos os contatos
+    procedimento listarContatos()
+    INICIO
+        VARIAVEL numero: i
+        
+        SE totalContatos == 0
+            EXIBIR "Agenda vazia!"
+        SENAO
+            EXIBIR "========== LISTA DE CONTATOS =========="
+            PARA i = 0 ATE totalContatos - 1
+                EXIBIR (i + 1) . " - " . nomes[i] . " | " . telefones[i]
+            FIMPARA
+            EXIBIR "========================================"
+        FIMSE
+    FIM
+    
+    // Procedimento para remover contato
+    procedimento removerContato()
+    INICIO
+        VARIAVEL string: remover
+        VARIAVEL numero: posicao = -1
+        VARIAVEL numero: i
+        
+        EXIBIR "Digite o nome do contato a remover: "
+        remover <- RECEBEA()
+        
+        PARA i = 0 ATE totalContatos - 1
+            SE nomes[i] == remover
+                posicao = i
+            FIMSE
+        FIMPARA
+        
+        SE posicao == -1
+            EXIBIR "Contato não encontrado!"
+        SENAO
+            PARA i = posicao ATE totalContatos - 2
+                nomes[i] = nomes[i + 1]
+                telefones[i] = telefones[i + 1]
+            FIMPARA
+            totalContatos <- totalContatos - 1
+            EXIBIR "Contato removido com sucesso!"
+        FIMSE
+    FIM
+    
+    // Menu principal
+    procedimento main()
+    INICIO
+        VARIAVEL numero: opcao = 0
+        
+        ENQUANTO opcao != 5
+            EXIBIR "========== AGENDA TELEFÔNICA =========="
+            EXIBIR "1 - Cadastrar contato"
+            EXIBIR "2 - Procurar contato"
+            EXIBIR "3 - Listar contatos"
+            EXIBIR "4 - Remover contato"
+            EXIBIR "5 - Sair"
+            EXIBIR "======================================="
+            EXIBIR "Opção: "
+            opcao <- RECEBEA()
+            
+            SE opcao == 1
+                cadastrarContato()
+            SENAO SE opcao == 2
+                procurarContato()
+            SENAO SE opcao == 3
+                listarContatos()
+            SENAO SE opcao == 4
+                removerContato()
+            SENAO SE opcao == 5
+                EXIBIR "Saindo da agenda..."
+            SENAO
+                EXIBIR "Opção inválida!"
+            FIMSE
+            
+            EXIBIR "" // linha em branco
+        FIMENQUANTO
+    FIM
+FIM
+
+=================================
+Desafio Avançado ⭐⭐
+Banco
+INICIO
+    VARIAVEL float: saldo = 0.00
+    VARIAVEL string: titular = ""
+    
+    // Procedimento para mostrar o menu
+    procedimento mostrarMenu()
+    INICIO
+        EXIBIR "========================================"
+        EXIBIR "            BANCO DIGITAL"
+        EXIBIR "========================================"
+        EXIBIR "Titular: " . titular
+        EXIBIR "----------------------------------------"
+        EXIBIR "1 - Consultar saldo"
+        EXIBIR "2 - Sacar"
+        EXIBIR "3 - Depositar"
+        EXIBIR "4 - Transferir"
+        EXIBIR "5 - Sair"
+        EXIBIR "========================================"
+        EXIBIR "Escolha uma opção: "
+    FIM
+    
+    // Função para consultar saldo
+    função consultarSaldo()
+    INICIO
+        RETORNE saldo
+    FIM
+    
+    // Função para sacar
+    função sacar(valor)
+    INICIO
+        SE valor <= 0
+            EXIBIR "Valor inválido!"
+            RETORNE 0
+        SENAO SE valor > saldo
+            EXIBIR "Saldo insuficiente!"
+            EXIBIR "Saldo disponível: R$ " . saldo
+            RETORNE 0
+        SENAO
+            saldo <- saldo - valor
+            EXIBIR "Saque realizado com sucesso!"
+            EXIBIR "Novo saldo: R$ " . saldo
+            RETORNE valor
+        FIMSE
+    FIM
+    
+    // Função para depositar
+    função depositar(valor)
+    INICIO
+        SE valor <= 0
+            EXIBIR "Valor inválido!"
+            RETORNE 0
+        SENAO
+            saldo <- saldo + valor
+            EXIBIR "Depósito realizado com sucesso!"
+            EXIBIR "Novo saldo: R$ " . saldo
+            RETORNE valor
+        FIMSE
+    FIM
+    
+    // Função para transferir
+    função transferir(valor, destino)
+    INICIO
+        SE valor <= 0
+            EXIBIR "Valor inválido!"
+            RETORNE 0
+        SENAO SE valor > saldo
+            EXIBIR "Saldo insuficiente!"
+            EXIBIR "Saldo disponível: R$ " . saldo
+            RETORNE 0
+        SENAO
+            saldo <- saldo - valor
+            EXIBIR "Transferência de R$ " . valor . " para " . destino
+            EXIBIR "Realizada com sucesso!"
+            EXIBIR "Novo saldo: R$ " . saldo
+            RETORNE valor
+        FIMSE
+    FIM
+    
+    procedimento main()
+    INICIO
+        VARIAVEL numero: opcao = 0
+        VARIAVEL float: valor
+        VARIAVEL string: destino
+        
+        EXIBIR "Bem-vindo ao Banco Digital!"
+        EXIBIR "Digite o nome do titular: "
+        titular <- RECEBEA()
+        EXIBIR "Olá " . titular . "! Vamos começar?"
+        EXIBIR ""
+        
+        ENQUANTO opcao != 5
+            mostrarMenu()
+            opcao <- RECEBEA()
+            
+            SE opcao == 1
+                EXIBIR "Saldo atual: R$ " . consultarSaldo()
+            
+            SENAO SE opcao == 2
+                EXIBIR "Valor para sacar: R$ "
+                valor <- RECEBEA()
+                sacar(valor)
+            
+            SENAO SE opcao == 3
+                EXIBIR "Valor para depositar: R$ "
+                valor <- RECEBEA()
+                depositar(valor)
+            
+            SENAO SE opcao == 4
+                EXIBIR "Valor para transferir: R$ "
+                valor <- RECEBEA()
+                EXIBIR "Nome do destinatário: "
+                destino <- RECEBEA()
+                transferir(valor, destino)
+            
+            SENAO SE opcao == 5
+                EXIBIR "Obrigado por usar o Banco Digital!"
+                EXIBIR "Até logo, " . titular . "!"
+            
+            SENAO
+                EXIBIR "Opção inválida! Tente novamente."
+            FIMSE
+            
+            EXIBIR "" // linha em branco
+        FIMENQUANTO
+    FIM
+FIM
+*********************************
+*********************************
+Desafio Mestre ⭐⭐⭐
+Sistema Acadêmico
+INICIO
+    // Estruturas para armazenar dados dos alunos
+    VARIAVEL string: nomes[100]
+    VARIAVEL float: notas1[100]
+    VARIAVEL float: notas2[100]
+    VARIAVEL float: notas3[100]
+    VARIAVEL float: medias[100]
+    VARIAVEL string: situacoes[100]
+    VARIAVEL string: classificacoes[100]
+    VARIAVEL numero: totalAlunos = 0
+    
+    // Procedimento para ler dados de um aluno
+    procedimento lerAluno(VARIAVEL string: nome, VARIAVEL float: n1, n2, n3)
+    INICIO
+        EXIBIR "Nome do aluno: "
+        nome <- RECEBEA()
+        EXIBIR "Nota 1: "
+        n1 <- RECEBEA()
+        EXIBIR "Nota 2: "
+        n2 <- RECEBEA()
+        EXIBIR "Nota 3: "
+        n3 <- RECEBEA()
+    FIM
+    
+    // Função para calcular média
+    função calcularMedia(n1, n2, n3)
+    INICIO
+        RETORNE (n1 + n2 + n3) / 3
+    FIM
+    
+    // Função para verificar aprovação
+    função verificarAprovacao(media)
+    INICIO
+        SE media >= 7
+            RETORNE "APROVADO"
+        SENAO SE media >= 5
+            RETORNE "RECUPERAÇÃO"
+        SENAO
+            RETORNE "REPROVADO"
+        FIMSE
+    FIM
+    
+    // Função para classificar aluno
+    função classificarAluno(media)
+    INICIO
+        SE media >= 9
+            RETORNE "EXCELENTE"
+        SENAO SE media >= 7
+            RETORNE "BOM"
+        SENAO SE media >= 5
+            RETORNE "REGULAR"
+        SENAO
+            RETORNE "INSATISFATÓRIO"
+        FIMSE
+    FIM
+    
+    // Procedimento para mostrar um aluno
+    procedimento mostrarAluno(posicao)
+    INICIO
+        EXIBIR "----------------------------------------"
+        EXIBIR "Aluno: " . nomes[posicao]
+        EXIBIR "Média: " . medias[posicao]
+        EXIBIR "Situação: " . situacoes[posicao]
+        EXIBIR "Classificação: " . classificacoes[posicao]
+        EXIBIR "----------------------------------------"
+    FIM
+    
+    // Procedimento para mostrar relatório final
+    procedimento mostrarRelatorioFinal()
+    INICIO
+        VARIAVEL numero: i
+        VARIAVEL numero: aprovados = 0
+        VARIAVEL numero: recuperacao = 0
+        VARIAVEL numero: reprovados = 0
+        VARIAVEL float: somaMedias = 0
+        VARIAVEL float: mediaGeral
+        
+        SE totalAlunos == 0
+            EXIBIR "Nenhum aluno cadastrado!"
+            RETORNE
+        FIMSE
+        
+        PARA i = 0 ATE totalAlunos - 1
+            somaMedias = somaMedias + medias[i]
+            
+            SE situacoes[i] == "APROVADO"
+                aprovados <- aprovados + 1
+            SENAO SE situacoes[i] == "RECUPERAÇÃO"
+                recuperacao <- recuperacao + 1
+            SENAO
+                reprovados <- reprovados + 1
+            FIMSE
+        FIMPARA
+        
+        mediaGeral = somaMedias / totalAlunos
+        
+        EXIBIR "========== RELATÓRIO FINAL =========="
+        EXIBIR "Total de alunos: " . totalAlunos
+        EXIBIR "----------------------------------------"
+        EXIBIR "APROVADOS: " . aprovados
+        EXIBIR "EM RECUPERAÇÃO: " . recuperacao
+        EXIBIR "REPROVADOS: " . reprovados
+        EXIBIR "----------------------------------------"
+        EXIBIR "Média geral da turma: " . mediaGeral
+        EXIBIR "========================================"
+        
+        EXIBIR ""
+        EXIBIR "Detalhamento dos alunos:"
+        PARA i = 0 ATE totalAlunos - 1
+            mostrarAluno(i)
+        FIMPARA
+    FIM
+    
+    procedimento main()
+    INICIO
+        VARIAVEL numero: opcao = 0
+        VARIAVEL string: nome
+        VARIAVEL float: n1, n2, n3
+        VARIAVEL float: media
+        
+        ENQUANTO opcao != 3
+            EXIBIR "========== SISTEMA ACADÊMICO =========="
+            EXIBIR "1 - Cadastrar aluno"
+            EXIBIR "2 - Mostrar relatório"
+            EXIBIR "3 - Sair"
+            EXIBIR "======================================="
+            EXIBIR "Opção: "
+            opcao <- RECEBEA()
+            
+            SE opcao == 1
+                lerAluno(nome, n1, n2, n3)
+                
+                nomes[totalAlunos] = nome
+                notas1[totalAlunos] = n1
+                notas2[totalAlunos] = n2
+                notas3[totalAlunos] = n3
+                
+                media = calcularMedia(n1, n2, n3)
+                medias[totalAlunos] = media
+                situacoes[totalAlunos] = verificarAprovacao(media)
+                classificacoes[totalAlunos] = classificarAluno(media)
+                
+                totalAlunos = totalAlunos + 1
+                EXIBIR "Aluno cadastrado com sucesso!"
+            
+            SENAO SE opcao == 2
+                mostrarRelatorioFinal()
+            
+            SENAO SE opcao == 3
+                EXIBIR "Saindo do sistema..."
+            
+            SENAO
+                EXIBIR "Opção inválida!"
+            FIMSE
+            
+            EXIBIR ""
+        FIMENQUANTO
+    FIM
+FIM
+
+=================================
+Desafio Épico ⭐⭐⭐⭐
+Mini Sistema de Loja
+INICIO
+    // Estruturas para armazenar produtos
+    VARIAVEL string: produtos[100]
+    VARIAVEL numero: quantidades[100]
+    VARIAVEL float: precos[100]
+    VARIAVEL numero: totalProdutos = 0
+    VARIAVEL float: impostoPadrao = 10 // 10%
+    VARIAVEL float: fretePadrao = 5.00
+    
+    // ========== FUNÇÕES ==========
+    
+    // Função para cadastrar produto
+    função cadastrarProduto()
+    INICIO
+        VARIAVEL string: nome
+        VARIAVEL numero: qtd
+        VARIAVEL float: preco
+        
+        EXIBIR "Nome do produto: "
+        nome <- RECEBEA()
+        EXIBIR "Quantidade: "
+        qtd <- RECEBEA()
+        EXIBIR "Preço unitário: R$ "
+        preco <- RECEBEA()
+        
+        produtos[totalProdutos] = nome
+        quantidades[totalProdutos] = qtd
+        precos[totalProdutos] = preco
+        totalProdutos <- totalProdutos + 1
+        
+        RETORNE 1 // sucesso
+    FIM
+    
+    // Função para calcular subtotal
+    função calcularSubtotal(preco, quantidade)
+    INICIO
+        RETORNE preco * quantidade
+    FIM
+    
+    // Função para calcular desconto
+    função calcularDesconto(subtotal, percentual)
+    INICIO
+        SE percentual < 0 OU percentual > 50
+            RETORNE 0
+        SENAO
+            RETORNE subtotal * (percentual / 100)
+        FIMSE
+    FIM
+    
+    // Função para calcular imposto
+    função calcularImposto(subtotal, aliquota)
+    INICIO
+        SE aliquota < 0
+            RETORNE 0
+        SENAO
+            RETORNE subtotal * (aliquota / 100)
+        FIMSE
+    FIM
+    
+    // Função para calcular frete
+    função calcularFrete(subtotal)
+    INICIO
+        SE subtotal > 100
+            RETORNE 0 // frete grátis
+        SENAO SE subtotal > 50
+            RETORNE fretePadrao / 2
+        SENAO
+            RETORNE fretePadrao
+        FIMSE
+    FIM
+    
+    // Função para calcular total
+    função calcularTotal(subtotal, desconto, imposto, frete)
+    INICIO
+        RETORNE subtotal - desconto + imposto + frete
+    FIM
+    
+    // Função para verificar promoção
+    função verificarPromocao(produto, quantidade)
+    INICIO
+        // Promoção: leve 3 pague 2
+        SE quantidade >= 3
+            VARIAVEL float: precoUnitario = 0
+            VARIAVEL numero: i
+            
+            PARA i = 0 ATE totalProdutos - 1
+                SE produtos[i] == produto
+                    precoUnitario = precos[i]
+                FIMSE
+            FIMPARA
+            
+            RETORNE precoUnitario * (quantidade - 1) // desconto de 1 item
+        SENAO
+            RETORNE quantidade * 0 // sem desconto
+        FIMSE
+    FIM
+    
+    // ========== PROCEDIMENTOS ==========
+    
+    // Procedimento para exibir menu
+    procedimento exibirMenu()
+    INICIO
+        EXIBIR "========================================"
+        EXIBIR "           MINI SISTEMA DE LOJA"
+        EXIBIR "========================================"
+        EXIBIR "1 - Cadastrar produto"
+        EXIBIR "2 - Mostrar produtos"
+        EXIBIR "3 - Realizar compra"
+        EXIBIR "4 - Sair"
+        EXIBIR "========================================"
+        EXIBIR "Opção: "
+    FIM
+    
+    // Procedimento para mostrar produtos
+    procedimento mostrarProdutos()
+    INICIO
+        VARIAVEL numero: i
+        
+        SE totalProdutos == 0
+            EXIBIR "Nenhum produto cadastrado!"
+        SENAO
+            EXIBIR "========== PRODUTOS CADASTRADOS =========="
+            PARA i = 0 ATE totalProdutos - 1
+                EXIBIR (i + 1) . " - " . produtos[i]
+                EXIBIR "   Quantidade: " . quantidades[i]
+                EXIBIR "   Preço: R$ " . precos[i]
+                EXIBIR "----------------------------------------"
+            FIMPARA
+            EXIBIR "============================================"
+        FIMSE
+    FIM
+    
+    // Procedimento para imprimir recibo
+    procedimento imprimirRecibo(produto, quantidade, preco, subtotal, desconto, imposto, frete, total, promocao)
+    INICIO
+        EXIBIR "========== RECIBO DA COMPRA =========="
+        EXIBIR "Produto: " . produto
+        EXIBIR "Quantidade: " . quantidade
+        EXIBIR "Preço unitário: R$ " . preco
+        EXIBIR "----------------------------------------"
+        EXIBIR "Subtotal: R$ " . subtotal
+        
+        SE promocao > 0
+            EXIBIR "PROMOÇÃO (Leve 3 pague 2): R$ -" . promocao
+        FIMSE
+        
+        SE desconto > 0
+            EXIBIR "Desconto: R$ -" . desconto
+        FIMSE
+        
+        EXIBIR "Imposto (10%): R$ " . imposto
+        EXIBIR "Frete: R$ " . frete
+        EXIBIR "----------------------------------------"
+        EXIBIR "TOTAL A PAGAR: R$ " . total
+        EXIBIR "========================================"
+        EXIBIR "Obrigado pela compra!"
+        EXIBIR "========================================"
+    FIM
+    
+    // ========== PROGRAMA PRINCIPAL ==========
+    
+    procedimento main()
+    INICIO
+        VARIAVEL numero: opcao = 0
+        VARIAVEL numero: indice
+        VARIAVEL numero: quantidade
+        VARIAVEL float: subtotal
+        VARIAVEL float: desconto
+        VARIAVEL float: imposto
+        VARIAVEL float: frete
+        VARIAVEL float: total
+        VARIAVEL float: promocao
+        
+        ENQUANTO opcao != 4
+            exibirMenu()
+            opcao = RECEBEA()
+            
+            SE opcao == 1
+                cadastrarProduto()
+                EXIBIR "Produto cadastrado com sucesso!"
+            
+            SENAO SE opcao == 2
+                mostrarProdutos()
+            
+            SENAO SE opcao == 3
+                SE totalProdutos == 0
+                    EXIBIR "Nenhum produto disponível!"
+                SENAO
+                    mostrarProdutos()
+                    EXIBIR "Digite o número do produto: "
+                    indice = RECEBEA() - 1
+                    
+                    SE indice >= 0 E indice < totalProdutos
+                        EXIBIR "Quantidade: "
+                        quantidade = RECEBEA()
+                        
+                        SE quantidade <= quantidades[indice]
+                            subtotal = calcularSubtotal(precos[indice], quantidade)
+                            
+                            // Verifica promoção
+                            promocao = verificarPromocao(produtos[indice], quantidade)
+                            SE promocao > 0
+                                subtotal = subtotal - promocao
+                            FIMSE
+                            
+                            desconto = calcularDesconto(subtotal, 10) // 10% de desconto
+                            imposto = calcularImposto(subtotal, impostoPadrao)
+                            frete = calcularFrete(subtotal)
+                            total = calcularTotal(subtotal, desconto, imposto, frete)
+                            
+                            imprimirRecibo(produtos[indice], quantidade, precos[indice], 
+                                           subtotal, desconto, imposto, frete, total, promocao)
+                            
+                            // Atualiza estoque
+                            quantidades[indice] = quantidades[indice] - quantidade
+                        SENAO
+                            EXIBIR "Quantidade indisponível em estoque!"
+                            EXIBIR "Disponível: " . quantidades[indice]
+                        FIMSE
+                    SENAO
+                        EXIBIR "Produto inválido!"
+                    FIMSE
+                FIMSE
+            
+            SENAO SE opcao == 4
+                EXIBIR "Saindo do sistema..."
+            
+            SENAO
+                EXIBIR "Opção inválida!"
+            FIMSE
+            
+            EXIBIR ""
+        FIMENQUANTO
+    FIM
+FIM
+*********************************

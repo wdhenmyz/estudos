@@ -1,0 +1,327 @@
+/*variáveis globais*/
+:root {
+    --Beige: Beige;
+    --Bisque: Bisque;
+    --Moccasin: Moccasin;
+    --Tan: Tan;
+    --BurlyWood: BurlyWood;
+    --sandybrown: sandybrown;
+    --Peru: Peru;
+    --chocolate: chocolate;
+    --Sienna: Sienna;
+    --saddlebrown: saddlebrown;
+    --brown: brown;
+    --firebrick: firebrick;
+    --Maroon: Maroon;
+    --darkred: darkred;
+    --red: red;
+    --Crimson: Crimson;
+    --IndianRed: IndianRed;
+    --LightCoral: LightCoral;
+    --Tomato: Tomato;
+    --orangered: orangered;
+    --darkorange: darkorange;
+    --orange: orange;
+    --yellow: yellow;
+    --yellowgreen: yellowgreen;
+    --greenyellow: greenyellow;
+    --limegreen: limegreen;
+    --green: green;
+    --seagreen: seagreen;
+    --springgreen: springgreen;
+    --lightseagreen: lightseagreen;
+    --cyan: cyan;
+    --skyblue: skyblue;
+    --dodgerblue: dodgerblue;
+    --royalblue:  royalblue;
+    --darkcyan: darkcyan;
+    --mediumblue: mediumblue;
+    --blue: blue;
+    --midnightblue: midnightblue;
+    --steelblue: steelblue;
+    --slateblue: slateblue;
+    --mediumpurple: mediumpurple;
+    --blueviolet: blueviolet;
+    --rebeccapurple: rebeccapurple;
+    --purple: purple;
+    --mediumvioletred: mediumvioletred;
+    --palevioletred: palevioletred;
+    --violet: violet;
+    --navajowhite: navajowhite;
+    --antiquewhite: antiquewhite;
+    --white: white;
+    --lightgray: lightgray;
+    --Silver: Silver;
+    --darkgray: darkgray;
+    --slategray: slategray;
+    --gray: gray;
+    --dimgray: dimgray;
+    --black: black;
+}
+
+/*text e font*/
+.txt-Beige {color: var(--Beige)}
+.txt-Bisque {color: var(--Bisque)};
+.txt-Moccasin {color: var(--Moccasin)};
+.txt-Tan {color: var(--Tan)};
+.txt-BurlyWood {color: var(--BurlyWood)};
+.txt-sandybrown {color: var(--sandybrown)}
+.txt-Peru {color: var(--Peru)}
+.txt-chocolate {color: var(--chocolate)}
+.txt-Sienna {color: var(--Sienna)};
+.txt-saddlebrown {color: var(--saddlebrown)}
+.txt-brown {color: var(--brown)}
+.txt-firebrick {color: var(--firebrick)}
+.txt-Maroon {color: var(--Maroon)}
+.txt-darkred {color: var(--darkred)}
+.txt-red {color: var(--red)}
+.txt-Crimson {color: var(--Crimson)}
+.txt-IndianRed {color: var(--IndianRed)}
+.txt-LightCoral {color: var(--LightCoral)}
+.txt-Tomato {color: var(--Tomato)}
+.txt-orangered {color: var(--orangered)}
+.txt-darkorange {color: var(--darkorange)}
+.txt-orange {color: var(--orange)}
+.txt-yellow {color: var(--yellow)}
+.txt-yellowgreen {color: var(--yellowgreen)}
+.txt-greenyellow {color: var(--greenyellow)}
+.txt-limegreen {color: var(--limegreen)}
+.txt-green {color: var(--green)}
+.txt-seagreen {color: var(--seagreen)}
+.txt-springgreen {color: var(--springgreen)}
+.txt-lightseagreen {color: var(--lightseagreen)}
+.txt-cyan {color: var(--cyan)}
+.txt-skyblue {color: var(--skyblue)}
+.txt-dodgerblue {color: var(--dodgerblue)}
+.txt-royalblue {color: var(--royalblue)}
+.txt-darkcyan {color: var(--darkcyan)}
+.txt-mediumblue {color: var(--mediumblue)}
+.txt-blue {color: var(--blue)}
+.txt-midnightblue {color: var(--midnightblue)}
+.txt-steelblue {color: var(--steelblue)}
+.txt-slateblue {color: var(--slateblue)}
+.txt-mediumpurple {color: var(--mediumpurple)}
+.txt-blueviolet {color: var(--blueviolet)}
+.txt-rebeccapurple {color: var(--rebeccapurple)}
+.txt-purple {color: var(--purple)}
+.txt-mediumvioletred {color: var(--mediumvioletred)}
+.txt-palevioletred {color: var(--palevioletred)}
+.txt-violet {color: var(--violet)}
+.txt-navajowhite {color: var(--navajowhite)}
+.txt-antiquewhite {color: var(--antiquewhite)}
+.txt-white {color: var(--white)}
+.txt-lightgray {color: var(--lightgray)}
+.txt-Silver {color: var(--Silver)}
+.txt-darkgray {color: var(--darkgray)}
+.txt-slategray {color: var(--slategray)}
+.txt-gray {color: var(--gray)}
+.txt-dimgray {color: var(--dimgray)}
+.txt-black {color: var(--black)}
+
+.txt-al-center {text-align: center}
+.txt-al-right {text-align: right}
+.txt-al-left {text-align: left}
+.txt-al-justify {text-align: justify}
+
+.txt-no-decoration {text-decoration: none}
+.txt-undl {text-decoration: underline}
+
+.txt-uppc {text-transform: uppercase;}
+.txt-lowc {text-transform: lowercase;}
+.txt-cap {text-transform: capitalize;}
+.txt-no-transform {text-transform: none;}
+
+.txt-stl-nml {font-style: normal}
+.txt-stl-ita {font-style: italic}
+.txt-stl-obl {font-style: oblique}
+
+.txt-ligther {font-weight: 100}
+.txt-ligth {font-weight: 300}
+.txt-medium {font-weight: 500}
+.txt-bold {font-weight: 700}
+.txt-bolder {font-weight: 900}
+
+.verdana {font-family: verdana, serif, sans-serif}
+.arial {font-family: arial, serif, sans-serif}
+.serif {font-family: serif}
+.sans-serif {font-family: sans-serif}
+.lucida {font-family: "lucida console", serif, sans-serif}
+.courier {font-family: "courier new", Courier, monospace}
+.t-new-roman {font-family: 'Times New Roman', Times, serif}
+
+.txt-var-normal {font-variant: normal}
+.txt-var-small {font-variant: small-caps}
+
+.spc-normal {letter-spacing: normal;}
+.spc-0 {letter-spacing: 0;}
+.spc-tight {letter-spacing: -0.5px;}
+.spc-tighter {letter-spacing: -1px;}
+.spc-lighter {letter-spacing: 0.5px;}
+.spc-light {letter-spacing: 1px;}
+.spc-moderate {letter-spacing: 1.5px;}
+.spc-wide {letter-spacing: 2px;}
+.spc-relat {letter-spacing: 0.05em;}
+.spc-relat {letter-spacing: 0.05em;}
+
+/* background */
+.bg-Beige {background-color: var(--Beige)}
+.bg-Bisque {background-color: var(--Bisque)}
+.bg-Moccasin {background-color: var(--Moccasin)}
+.bg-Tan {background-color: var(--Tan)}
+.bg-BurlyWood {background-color: var(--BurlyWood)}
+.bg-sandybrown {background-color: var(--sandybrown)}
+.bg-Peru {background-color: var(--Peru)}
+.bg-chocolate {background-color: var(--chocolate)}
+.bg-Sienna {background-color: var(--Sienna)}
+.bg-saddlebrown {background-color: var(--saddlebrown)}
+.bg-brown {background-color: var(--brown)}
+.bg-firebrick {background-color: var(--firebrick)}
+.bg-Maroon {background-color: var(--Maroon)}
+.bg-darkred {background-color: var(--darkred)}
+.bg-red {background-color: var(--red)}
+.bg-Crimson {background-color: var(--Crimson)}
+.bg-IndianRed {background-color: var(--IndianRed)}
+.bg-LightCoral {background-color: var(--LightCoral)}
+.bg-Tomato {background-color: var(--Tomato)}
+.bg-orangered {background-color: var(--orangered)}
+.bg-darkorange {background-color: var(--darkorange)}
+.bg-orange {background-color: var(--orange)}
+.bg-yellow {background-color: var(--yellow)}
+.bg-yellowgreen {background-color: var(--yellowgreen)}
+.bg-greenyellow {background-color: var(--greenyellow)}
+.bg-limegreen {background-color: var(--limegreen)}
+.bg-green {background-color: var(--green)}
+.bg-seagreen {background-color: var(--seagreen)}
+.bg-springgreen {background-color: var(--springgreen)}
+.bg-lightseagreen {background-color: var(--lightseagreen)}
+.bg-cyan {background-color: var(--cyan)}
+.bg-skyblue {background-color: var(--skyblue)}
+.bg-dodgerblue {background-color: var(--dodgerblue)}
+.bg-royalblue {background-color: var(--royalblue)}
+.bg-darkcyan {background-color: var(--darkcyan)}
+.bg-mediumblue {background-color: var(--mediumblue)}
+.bg-blue {background-color: var(--blue)}
+.bg-midnightblue {background-color: var(--midnightblue)}
+.bg-steelblue {background-color: var(--steelblue)}
+.bg-slateblue {background-color: var(--slateblue)}
+.bg-mediumpurple {background-color: var(--mediumpurple)}
+.bg-blueviolet {background-color: var(--blueviolet)}
+.bg-rebeccapurple {background-color: var(--rebeccapurple)}
+.bg-purple {background-color: var(--purple)}
+.bg-mediumvioletred {background-color: var(--mediumvioletred)}
+.bg-palevioletred {background-color: var(--palevioletred)}
+.bg-violet {background-color: var(--violet)}
+.bg-navajowhite {background-color: var(--navajowhite)}
+.bg-antiquewhite {background-color: var(--antiquewhite)}
+.bg-white {background-color: var(--white)}
+.bg-lightgray {background-color: var(--lightgray)}
+.bg-Silver {background-color: var(--Silver)}
+.bg-darkgray {background-color: var(--darkgray)}
+.bg-slategray {background-color: var(--slategray)}
+.bg-gray {background-color: var(--gray)}
+.bg-dimgray {background-color: var(--dimgray)}
+.bg-black {background-color: var(--black)}
+
+.repeat {background-repeat: repeat}
+.repeat-x {background-repeat: repeat-x}
+.repeat-y {background-repeat: repeat-y}
+.no-repeat {background-repeat: no-repeat}
+.space {background-repeat: space}
+.round {background-repeat: round}
+
+.bg-scroll {background-attachment: scroll;}
+.bg-fixed {background-attachment: fixed;}
+.bg-local {background-attachment: local;}
+
+.bg-contain {background-size: contain}
+.bg-cover {background-size: cover}
+.bg-auto {background-size: auto}
+
+.bg-b-box {background-origin: border-box}
+.bg-p-box {background-origin: padding-box}
+.bg-c-box {background-origin: content-box}
+
+.bg-o-pad {background-clip: border-box}
+.bg-o-bor {background-clip: padding-box}
+.bg-o-con {background-clip: content-box}
+
+.bg-x-left {background-position-x: left}
+.bg-x-right {background-position-x: right}
+.bg-x-center {background-position-x: center}
+.bg-y-top {background-position-y: top}
+.bg-y-bottom {background-position-y: bottom}
+.bg-y-center {background-position-y: center}
+
+/* border */
+.b-wid-t { border-width: thin }
+.b-wid-m { border-width: medium }
+.b-wid-th { border-width: thick }
+
+.b-dotted {border-style: dotted;}
+.b-dashed {border-style: dashed;}
+.b-solid {border-style: solid;}
+.b-double {border-style: double;}
+.b-groove {border-style: groove;}
+.b-ridge {border-style: ridge;}
+.b-inset {border-style: inset;}
+.b-outset {border-style: outset;}
+.b-none {border-style: none;}
+.b-hidden {border-style: hidden;}
+
+/* Border styles - top */
+.b-t-dotted { border-top-style: dotted}
+.b-t-dashed { border-top-style: dashed}
+.b-t-solid { border-top-style: solid}
+.b-t-double { border-top-style: double}
+.b-t-groove { border-top-style: groove}
+.b-t-ridge { border-top-style: ridge}
+.b-t-inset { border-top-style: inset}
+.b-t-outset { border-top-style: outset}
+.b-t-none { border-top-style: none}
+.b-t-hidden { border-top-style: hidden}
+
+/* Border styles - right */
+.b-r-dotted { border-right-style: dotted}
+.b-r-dashed { border-right-style: dashed}
+.b-r-solid { border-right-style: solid}
+.b-r-double { border-right-style: double}
+.b-r-groove { border-right-style: groove}
+.b-r-ridge { border-right-style: ridge}
+.b-r-inset { border-right-style: inset}
+.b-r-outset { border-right-style: outset}
+.b-r-none { border-right-style: none}
+.b-r-hidden { border-right-style: hidden}
+
+/* Border styles - bottom */
+.b-b-dotted { border-bottom-style: dotted}
+.b-b-dashed { border-bottom-style: dashed}
+.b-b-solid { border-bottom-style: solid}
+.b-b-double { border-bottom-style: double}
+.b-b-groove { border-bottom-style: groove}
+.b-b-ridge { border-bottom-style: ridge}
+.b-b-inset { border-bottom-style: inset}
+.b-b-outset { border-bottom-style: outset}
+.b-b-none { border-bottom-style: none}
+.b-b-hidden { border-bottom-style: hidden}
+
+/* Border styles - left */
+.b-l-dotted { border-left-style: dotted}
+.b-l-dashed { border-left-style: dashed}
+.b-l-solid { border-left-style: solid}
+.b-l-double { border-left-style: double}
+.b-l-groove { border-left-style: groove}
+.b-l-ridge { border-left-style: ridge}
+.b-l-inset { border-left-style: inset}
+.b-l-outset { border-left-style: outset}
+.b-l-none { border-left-style: none}
+.b-l-hidden { border-left-style: hidden}
+
+/* display */
+.inline {display: inline;}
+.block {display: block;}
+.flex {display: flex;}
+.grid {display: grid;}
+.none {display: none;}
+.run-in {display: run-in;}
+.contents {display: contents;}
+.table {display: table;}
